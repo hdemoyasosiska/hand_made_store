@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>СветЛуны</title>
+    <!--<link rel = "icon" type = "images/x-icon" href = "img/icon.ico">-->
+    <link rel="stylesheet" href="/static/css/home.css">
+    <link rel="icon" href="/static/img/favicon.ico" sizes="any">
+</head>
+
+<body>
+<header class="header">
+    <div class="container">
+
+        <p><a href="/home"><img src="/static/img/фавиконка.jpg" class="logo"/  width="200" height="200"></a></p>
+        <nav class = "navv" style="height: 56.5px">
+            <p><a class = "link1" href="/home">Главная</a>
+                <a class = "link2" href="/catalog">Каталог</a>
+                <a class = "link3" href="/content">Контент</a>
+        </nav></header>
+
+
+<a> <form th:action="@{/logout}" method="post" id="exit">
+    <input type="submit" value="Выход" id="logout_button"/>
+</form></a>
+
+
+<main>
+    <h1 class="title">Индивидуальный заказ</h1>
+    <section class="bags">
+        <div class="center">
+            <div class="List"></div>
+        </div>
+        <form id="basketForm" action="/individual_order" method="post" enctype="multipart/form-data">
+            <div class="center">
+                <div class="Delivery">
+                    <h1>Укажите контактные данные</h1>
+                    <div class="contactForm">
+                        <label for="name" class="inform">Имя<span> (обязательно)</span></label>
+                        <input type="text" placeholder="ФИО" name="name" id="name" required pattern="[A-Za-zА-Яа-яЁё\s]+">
+
+                        <label for="phone">Телефон<span> (обязательно)</span></label>
+                        <input type="tel" placeholder="+7 (***) ***-**-**" name="phone" id="phone" required>
+
+                        <label for="address">Адрес<span> (обязательно)</span></label>
+                        <input type="text" placeholder="Ваш адрес" name="address" id="address" required>
+
+                        <label for="email" class="inform">Электронная почта<span> (обязательно)</span></label>
+                        <input type="email" placeholder="Электронная почта" name="email" id="email" required>
+                    </div>
+                </div>
+
+                <div class="Delivery">
+                    <h1>Детали заказа</h1>
+                    <div class="contactForm">
+                        <label for="requirements">Требования к заказу</label>
+                        <textarea name="requirements" id="requirements" placeholder="Введите детали заказа"></textarea>
+
+                        <label for="budget">Бюджет</label>
+                        <input type="number" name="budget" id="budget" min="0">
+                        <p></p>
+                        <label for="color">Цвет</label>
+                        <input type="text" name="color" id="color">
+
+                        <label for="materials">Материалы</label>
+                        <input type="text" name="materials" id="materials">
+
+                        <label for="deadline">Срок исполнения</label>
+                        <input type="date" name="deadline" id="deadline">
+                        <p></p>
+                        <label for="files">Загрузите изображения (эскизы или примеры)</label>
+                        <input type="file" name="files" id="files" multiple accept="image/*">
+                    </div>
+                </div>
+            </div>
+
+            <div class="Form">
+                <button type="submit" class="button">Оформить заказ</button>
+            </div>
+        </form>
+
+    </section>
+</main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="/static/js/individual_order.js"></script>
+
+</body>

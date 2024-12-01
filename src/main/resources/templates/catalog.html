@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/static/css/catalog.css" />
+
+    <link rel="icon" href="/static/img/favicon.ico" sizes="any">
+
+    <title>СветЛуны</title>
+  </head>
+  <body class="element">
+    <header>
+      <section id="log">
+
+
+
+
+
+			<p><a href="/home"><img src="/static/img/фавиконка.jpg" class="logo"/  width="200" height="200"></a></p>
+      <nav class = "navv">
+				<p><a class = "link1" href="/home">Главная</a>
+				<a class = "link2" href="/catalog">Каталог</a>
+				<a class = "link3" href="/content">Контент</a>
+				</nav></header>
+
+
+        <div class="burger-menu">
+					<input id="menu-toggle" type="checkbox" >
+					<label class="menu-btn" for="menu-toggle">
+					  <span></span>
+					</label>
+
+					<ul class="menubox">
+            <li><a class = "link1" href="/home">Главная</a></li>
+            <li><a class = "link2" href="/catalog">Каталог</a></li>
+            <li><a class = "link3" href="/static/img/sssCONTENT.html">Контент</a></li>
+
+        </ul>
+				  </div>
+
+    <a> <form th:action="@{/logout}" method="post" id="exit">
+      <input type="submit" value="Выход" id="logout_button"/>
+    </form></a>
+
+
+
+    <div class="Products">
+      <div class="search">
+        <div class="count">
+          <label for="count_1">Количество на странице:</label>
+          <select name="count_1" id="count_1" onchange="loadGoods(0)">
+            <option value="3">3</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+          </select>
+        </div>
+
+        <select name="typeSorting" id="typeSorting">
+          <option value="usually">По умолчанию</option>
+          <option value="increase">По возрастанию</option>
+          <option value="decrease">По убыванию</option>
+        </select>
+
+
+      </div>
+
+      <ul id="product_list"></ul>
+      <div id="paging_buttons">Pages:</div>
+    </div>
+
+    <aside class="sidebar">
+      <p>Не нашли ничего подходящего?</p>
+      <p><a href="/individual_order" class="sidebar-link">Вы всегда можете заказать индивидуальную работу</a></p>
+    </aside>
+
+    </section>
+
+
+    <button class="cart" id="cart" onclick="document.location='/basket'">
+      <img class="cart__image" src="/static/img/free-icon-shopping-cart-483283.png" alt="Cart" srcset="" />
+      <div class="cart__num" id="cart_num">0</div>
+    </button>
+    <div class="popup">
+      <div class="popup__container" id="popup_container">
+        <div class="popup__item">
+          <h1 class="popup__title">Оформление заказа</h1>
+        </div>
+        <div class="popup__item" id="popup_product_list">
+
+        </div>
+        <button class="popup__sort-btn" onclick="sortCartByPrice()">Сортировать по цене</button>
+        <div class="popup__item">
+          <div class="popup__cost">
+            <h2 class="popup__cost-title">Итого</h2>
+            <output class="popup__cost-value" id="popup_cost">0</output>
+          </div>
+
+          </div>
+        </div>
+        <button class="popup__close" id="popup_close">&#10006;</button>
+      </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/static/js/catalog.js"></script>
+    <script src="/static/js/script.js"></script>
+
+  </body>
+  <footer>
+
+
+
+
+
+
+    <address>
+      <h3 id="contacts">Контакты</h3>
+
+      <div class="social-buttons">
+        <a href="https://vk.com/svetlana_tm" class="social-button facebook">
+          <span class="icon">
+          <img id = "vk"  src="/static/img/icons8-vk-500.png" alt="Vk">
+          </span>
+        </a>
+        <a href="https://t.me/Moon06light" class="social-button twitter">
+          <span class="icon">
+          <img id="tg" src="/static/img/free-icon-telegram-1946547.png" alt="Tg">
+          </span>
+        </a>
+        <a href="#" class="social-button instagram">
+          <span class="icon">
+          <img src="/static/img/free-icon-instagram-1384031.png" alt="Instagram">
+          </span>
+        </a>
+        </div>
+
+
+      <p><a href="mailto:vlad@htmlbook.ru">Задавайте вопросы по электронной почте</a></p>
+      <div class=phone><a href="tel:+74951234567">+7 (495) 123-45-67</a></div>
+
+    </address>
+    <iframe id = "gmap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5185.7256566620135!2d35.830297033697214!3d56.850707583586114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b687ab1d6c94f3%3A0xf42b3a95f433bc9c!2z0KLQstC10YDRjCwg0KLQstC10YDRgdC60LDRjyDQvtCx0LsuLCDQoNC-0YHRgdC40Y8!5e0!3m2!1sru!2sfr!4v1696197892025!5m2!1sru!2sfr"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+  </footer>
+
+</html>

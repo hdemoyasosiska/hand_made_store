@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>СветЛуны</title>
+    <!--<link rel = "icon" type = "images/x-icon" href = "img/icon.ico">-->
+    <link rel="stylesheet" href="/static/css/home.css">
+    <link rel="icon" href="/static/img/favicon.ico" sizes="any">
+</head>
+
+<body>
+<header class="header">
+    <div class="container">
+
+            <p><a href="/home"><img src="/static/img/фавиконка.jpg" class="logo"/  width="200" height="200"></a></p>
+            <nav class = "navv" style="height: 56.5px">
+                <p><a class = "link1" href="/home">Главная</a>
+                    <a class = "link2" href="/catalog">Каталог</a>
+                    <a class = "link3" href="/content">Контент</a>
+            </nav></header>
+
+
+<a> <form th:action="@{/logout}" method="post" id="exit">
+    <input type="submit" value="Выход" id="logout_button"/>
+</form></a>
+
+
+<main>
+    <h1 class="title">Моя корзина</h1>
+    <section class="bags">
+        <div class="center">
+            <div class="List"></div>
+        </div>
+        <form id="basketForm" action="/basket" method="post">
+            <div class="center">
+
+                <div class="Delivery">
+                    <h1>Укажите контактные данные</h1>
+                    <div class="contactForm">
+                        <label for="name" class="inform">Имя<span>(обязательно)</span></label>
+                        <input type="text" placeholder="ФИО" name="name" id="name" required pattern="[A-Za-zА-Яа-яЁё\s]+">
+
+                        <div class="link">
+                            <label for="phone">Телефон<span>(обязательно)</span></label>
+                            <input type="tel" placeholder="+7 (***) ***-**-**" name="phone" id="phone" required>
+
+                            <label for="email" class="inform">Электронная почта<span>(обязательно)</span></label>
+                            <input type="email" placeholder="Электронная почта" name="email" id="email" required>
+                        </div>
+
+                    </div>
+
+                    <h1>Укажите адрес доставки</h1>
+
+                    <div class="contactForm">
+                        <div class="home">
+                            <label for="address" class="inform">Адрес доставки<span>(обязательно)</span>
+                                <input type="text" placeholder="Улица, дом" name="address" id="address" required>
+                            </label>
+
+<!--                            <label for="reqs" class="inform">Требования к заказу-->
+<!--                                <input type="text" placeholder="ваши требования" name="reqs " id="reqs" required pattern="[A-Za-zА-Яа-яЁё0-9]+">-->
+<!--                            </label>-->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Form">
+                <div class="promoForm">
+                    <input type="hidden" name="price" id="totalPrice" value="0">
+                    <input type="hidden" name="cart" id="shoppingCart" value="0">
+
+                    <div class="Total">
+                        <p>ИТОГО:</p>
+                        <p class="price">0</p>
+                    </div>
+
+                    <button type="submit" class="button">Оформить заказ</button>
+
+                    <div class="checkbox1">
+                        <input type="checkbox" id="myCheckbox" class="checkbox">
+                        <label for="myCheckbox" class="checkbox">
+                            SMS уведомление о состоянии заказа
+                        </label>
+                    </div>
+
+                    <div class="checkbox1">
+                        <input type="checkbox" id="myCheckbox1" class="checkbox">
+                        <label for="myCheckbox1" class="checkbox">
+
+                            При нажатии кнопки "Оформить заказ", я полностью принимаю условия соглашения
+                            о покупке и продаже, а также соглашаюсь на обработку моих персональных данных
+                            в соответствии с принятыми Положением и Правилами о защите данных. Кроме того,
+                            я добровольно соглашаюсь получать информацию о специальных предложениях, новых
+                            товарах и рекламных акциях, включая, но не ограничиваясь, рассылкой по электронной
+                            почте, телефонными звонками, сетью интернет и мобильными устройствами.
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+</main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="/static/js/basket.js"></script>
+<script src="/static/js/script.js"></script>
+</body>

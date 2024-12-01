@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>СветЛуны</title>
+    <link rel="icon" href="/static/img/favicon.ico" sizes="any">
+    
+    <link rel="stylesheet" href="/static/css/login.css">
+</head>
+<body>
+    
+    <form action="/home" target="_self" class="catalog_b">
+        <div id="shimmer" ><button  class="shimmer">На главную</button></div>
+      </form>
+    <div class="glassmorphism-form">
+
+        <h2>Добавить итем</h2>
+        <form id="fff" th:action="@{/items/add_item}" method="post">
+            <label for="name" class="inform"></label>
+            <input type="text" placeholder="Имя" name="name" id="name" required>
+            <label for="size" class="inform"></label>
+            <input type="number" placeholder="Размер" name="size" id="size" required>
+
+            <label for="color" class="inform"></label>
+            <input type="text" placeholder="Цвет" name="color" id="color" required>
+
+            <label for="material" class="inform"></label>
+            <input type="text" placeholder="Материал" name="material" id="material" required>
+
+            <label for="price" class="inform"></label>
+            <input type="number" placeholder="Цена" name="price" id="price" required>
+
+            <label for="quantity" class="inform"></label>
+            <input type="number" placeholder="Количество" name="quantity" id="quantity" required>
+
+            <label for="image" class="inform"></label>
+            <input type="text" placeholder="Изображение" name="image" id="image" required>
+
+
+
+            <form action="/home" target="_self" class="catalog_b">
+                <div ><button type="submit" >Добавить</button></div>
+            </form>
+        </form>
+    </div>
+    <div class="floating-squares">
+        <div class="square square-1"></div>
+        <div class="square square-2"></div>
+        <div class="square square-3"></div>
+        <div class="square square-4"></div>
+        <div class="square square-5"></div>
+    </div>
+
+
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            var password = document.getElementById("password").value;
+            var repeatPassword = document.getElementById("repeate-password").value;
+
+            if (password !== repeatPassword) {
+                alert("Пароли не совпадают");
+                event.preventDefault();
+            }
+
+
+            localStorage.setItem("emailTaken", true);
+        });
+    </script>
+
+    <script>
+        var emailTaken = localStorage.getItem("emailTaken");
+        if (emailTaken) {
+            alert("Email уже занят");
+            localStorage.setItem("emailTaken", false);
+        }
+    </script>
+
+</body>
+</html>

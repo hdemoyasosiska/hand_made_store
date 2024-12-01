@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>СветЛуны</title>
+    <link rel="icon" href="/static/img/favicon.ico" sizes="any">
+    
+    <link rel="stylesheet" href="/static/css/login.css">
+</head>
+<body>
+<div th:if="${param.error}">
+    Invalid username and password.
+</div>
+<div th:if="${param.logout}">
+    You have been logged out.
+</div>
+    <form action="/home" target="_self" class="catalog_b">
+        <div id="shimmer" ><button  class="shimmer">На главную</button></div>
+      </form>
+    <div class="glassmorphism-form">
+
+        <h2>Вход</h2>
+        <form id="fff" th:action="@{/login}" method="post">
+
+            <label for="email" class="inform"></label>
+            <input type="email" placeholder="Почта" name="username" id="email">
+
+            <label for="password" class="inform"></label>
+            <input type="password" placeholder="Пароль" name="password" id="password">
+
+            <button type="submit">Войти</button>
+            <a style="margin-top: 15px">Нет аккаунта? <a href="/regist">Зарегестироваться</a></a>
+        </form>
+    </div>
+    <div class="floating-squares">
+        <div class="square square-1"></div>
+        <div class="square square-2"></div>
+        <div class="square square-3"></div>
+        <div class="square square-4"></div>
+        <div class="square square-5"></div>
+    </div>
+</body>
+</html>

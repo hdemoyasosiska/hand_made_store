@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html> 
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>СветЛуны</title>
+		<link rel="icon" href="/static/img/favicon.ico" sizes="any">
+		<link rel="stylesheet" href="/static/css/home.css">
+		
+	</head>
+	<body class="element">
+		<header> 
+			<section id="log">
+			<h1 id="zag">ТВОРЧЕСКАЯ МАСТЕРСКАЯ СветЛуны</h1>
+
+			
+			
+				
+			  
+			<p><a href="/home"><img src="/static/img/фавиконка.jpg" class="logo"/  width="200" height="200"></a></p>
+			</section>
+
+			
+				<nav class = "navv">
+				<p><a class = "link1" href="/home">Главная</a>
+				<a class = "link2" href="/catalog">Каталог</a>
+				<a class = "link3" href="/content">Контент</a>
+
+				</p>
+
+
+				</nav>
+
+<!--				<input type="checkbox" id="notificationToggle" class="hidden-checkbox">-->
+<!--				<label for="notificationToggle" class="notification-label">-->
+<!--				  <span class="notification-icon">🔔</span>-->
+<!--				  <span class="notification-count">1</span>-->
+<!--				  <div class="notifications">-->
+<!--					<p>Очень скоро планируются летние скидки</p>-->
+<!--				  </div>-->
+				</label>
+				
+
+
+
+				<div class="burger-menu">
+					<input id="menu-toggle" type="checkbox" >
+					<label class="menu-btn" for="menu-toggle">
+					  <span></span>
+					</label>
+				 
+					<ul class="menubox">
+							<li><a class = "link1" href="/home">Главная</a></li>
+							<li><a class = "link2" href="/catalog">Каталог</a></li>
+							<li><a class = "link3" href="content.html">Контент</a></li>
+
+					</ul>
+				  </div>
+			
+
+			<a> <form th:action="@{/logout}" method="post" id="exit">
+				<input type="submit" value="Выход" id="logout_button"/>
+			</form></a>
+			<!-- Комментарий -->
+			<aside>
+				<p>Авторские куклы и игрушки ручной работы, изделия из фетра и бисера</p>
+			</aside>
+			<p id = "leader">Вдохновляйся, твори, делись – рукоделие объединяет сердца и дарит радость.</p>
+			<h2 id="about">О нас</h2>
+			
+			<p>Добро пожаловать в мир уникальных творений, где каждый предмет несет в себе не только красоту, но и неповторимую историю рукодельного мастерства. Наш магазин — это место, где умение и страсть к рукоделию переплетаются с креативом и индивидуальностью каждого изделия.
+				Узнайте больше о нашем вдохновляющем мастере, Светлане Беловой, и погрузитесь в историю ее творческого пути. <br> <br> <a href="/about" title = "Узнать">Узнать больше о мастере</a>
+				
+				
+				</p>
+			
+		</header>
+		<main>
+
+			<article>
+
+			<section>
+				<h3 id="exmpl">Примеры работ:</h3>
+				<div id="primeri" class="image-container">
+					<div class="image">
+						<img src="/static/img/d0yi_IoDvmY.jpg" class="selector">
+						<p class="image-text">Заяц</p>
+					</div>
+					<div class="image">
+						<img src="/static/img/4g9IqY-NVNQ.jpg" class="selector">
+						<p class="image-text">Брошь - лиса</p>
+					</div>
+					<div class="image">
+						<img src="/static/img/QS-hVEoIjjg.jpg" class="selector">
+						<p class="image-text">Медведи</p>
+					</div>
+					<div class="image">
+						<img src="/static/img/crown.jpg" class="selector">
+						<p class="image-text">Корона</p>
+					</div>
+					<div class="image">
+						<img src="/static/img/list.jpg" class="selector">
+						<p class="image-text">Осенний листопад 🍂🍁</p>
+					</div>
+				</div>
+			</section>
+
+				
+				
+			<form action="/catalog" target="_self" class="catalog_b">
+				<div id="shimmer" ><button  class="shimmer">Каталог</div>
+			</form>
+			
+
+			
+
+
+			  
+		<section>
+			<h3>Из чего мы делаем наши рукодельные изделия:</h3>
+			<ol type="I" start = "I">
+			<li>Ткани
+				<ul>
+					<li>Игрушки</li>
+					<li>Куклы</li>
+					<li>Подушки</li>
+				</ul>
+			</li>
+			<li>Нитки и пряжа
+				<ul>
+					<li>Вязаные игрушки</li>
+					<li>Шарфы и снуды</li>
+					<li>Пледы</li>
+				</ul>
+			</li>
+			</ol>
+			</body>
+			
+
+		</section>
+
+
+	</article>
+	<form action="/content" target="_self" class="catalog_b">
+		<div id="shimmer" ><button  class="shimmer">Посмотреть контент</div>
+	</form>
+
+
+</main>
+<footer>
+	
+	
+
+	
+
+
+	<address>
+		<h3 id="contacts">Контакты</h3>
+
+		<div class="social-buttons">
+			<a href="https://vk.com/svetlana_tm" class="social-button facebook">
+			  <span class="icon">
+				<img id = "vk"  src="/static/img/icons8-vk-500.png" alt="Vk">
+			  </span>
+			</a>
+			<a href="https://t.me/Moon06light" class="social-button twitter">
+			  <span class="icon">
+				<img id="tg" src="/static/img/free-icon-telegram-1946547.png" alt="Tg">
+			  </span>
+			</a>
+			<a href="#" class="social-button instagram">
+			  <span class="icon">
+				<img src="/static/img/free-icon-instagram-1384031.png" alt="Instagram">
+			  </span>
+			</a>
+		  </div>
+		  
+		
+		<p><a href="mailto:vlad@htmlbook.ru">Задавайте вопросы по электронной почте</a></p>
+		<div class=phone><a href="tel:+74951234567">+7 (495) 123-45-67</a></div>
+		<nav>
+			<p><a href="#zag">К началу</a></p>
+			<p><a href="#about">О нас</a></p>
+			<p><a href="#exmpl">Примеры работ</a></p>
+			<p><a href="#theory">Теория</a></p>
+		</nav>
+	</address>
+	<iframe id = "gmap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5185.7256566620135!2d35.830297033697214!3d56.850707583586114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b687ab1d6c94f3%3A0xf42b3a95f433bc9c!2z0KLQstC10YDRjCwg0KLQstC10YDRgdC60LDRjyDQvtCx0LsuLCDQoNC-0YHRgdC40Y8!5e0!3m2!1sru!2sfr!4v1696197892025!5m2!1sru!2sfr"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>		
+
+
+</footer>
+
+</html>
