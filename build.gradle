@@ -54,7 +54,6 @@ dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.1'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6:3.1.2.RELEASE'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
     testImplementation 'org.mockito:mockito-core:3.12.4'
     testImplementation 'junit:junit'
@@ -69,13 +68,12 @@ tasks.named('test') {
 
 
 jar {
-    from sourceSets.main.output
-    from configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
-    archiveFileName = 'app.jar'
-    duplicatesStrategy = 'exclude'
-    enabled = true
-
     manifest {
-        attributes 'Main-Class': 'org.example.hm_store.HandMadeStoreApplication'
+        attributes 'Main-Class': 'org.example.project.ProjectApplication'
     }
+
+    archiveBaseName = 'app'
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
 }
+
