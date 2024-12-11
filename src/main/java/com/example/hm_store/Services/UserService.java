@@ -4,7 +4,6 @@ import com.example.hm_store.entity.User;
 import com.example.hm_store.repo.UserRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -14,16 +13,17 @@ import java.util.List;
 @Transactional
 @RequiredArgsConstructor
 public class UserService {
+
     private final UserRepository userRepository;
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+
+    private final PasswordEncoder passwordEncoder;
 
 
     public boolean existsByEmail(String email){
         return userRepository.existsByEmail(email);
     }
 
-    public void save(User user) {
+    private void save(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         userRepository.save(user);
     }
@@ -41,7 +41,7 @@ public class UserService {
     }
 
     public User getById(int id){
-        return userRepository.getById(id);
+        return userRepository.getReferenceById(id);
     }
 
     public boolean update(User user, int id){

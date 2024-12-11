@@ -21,8 +21,7 @@ import java.util.Optional;
 @Transactional
 public class ItemService {
     private final ItemRepository itemRepository;
-    @PersistenceContext
-    private EntityManager entityManager;
+
     public Item getById(int id) {
         return itemRepository.findById(id).orElseThrow(() -> new IllegalStateException("Item "
                 + "with this id not found"));
@@ -31,6 +30,7 @@ public class ItemService {
     public List<Item> findAllItems() {
         return itemRepository.findAll();
     }
+
     public void saveItem(Item item) {
         itemRepository.save(item);
     }

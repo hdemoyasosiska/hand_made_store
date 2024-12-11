@@ -25,8 +25,7 @@ import java.util.*;
 @Transactional
 public class IndividualOrderService {
     private final IndividualOrderRepository individualOrderRepository;
-    @PersistenceContext
-    private EntityManager entityManager;
+
 
     private final ObjectMapper objectMapper;
 

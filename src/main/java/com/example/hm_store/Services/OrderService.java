@@ -24,8 +24,7 @@ import java.util.*;
 public class OrderService {
     private final OrderRepository orderRepository;
     private final ItemRepository itemRepository;
-    @PersistenceContext
-    private EntityManager entityManager;
+
 
     private final ObjectMapper objectMapper;
 
@@ -63,6 +62,7 @@ public class OrderService {
             throw new IllegalArgumentException("Failed to parse shopping cart data", e);
         }
     }
+
     public void createOrder(Customer customer, String shoppingCart) {
         Map<String, Map<String, Object>> cart = getMap(shoppingCart);
         System.out.println(cart.entrySet());
