@@ -55,7 +55,9 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6:3.1.2.RELEASE'
     testImplementation 'org.springframework.security:spring-security-test'
-    testImplementation 'org.mockito:mockito-core:3.12.4'
+    testImplementation 'org.mockito:mockito-core:5.2.0'
+    testImplementation group: 'org.mockito', name: 'mockito-inline', version: '5.2.0'
+
     testImplementation 'junit:junit'
 
     compileOnly 'org.projectlombok:lombok'
