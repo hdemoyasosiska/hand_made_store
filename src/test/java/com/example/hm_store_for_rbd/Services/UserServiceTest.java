@@ -1,10 +1,7 @@
-package com.example.hm_store_for_rbd;
+package com.example.hm_store_for_rbd.Services;
 
-import com.example.hm_store.Services.OrderService;
 import com.example.hm_store.Services.UserService;
-import com.example.hm_store.entity.Order;
 import com.example.hm_store.entity.User;
-import com.example.hm_store.repo.ItemRepository;
 import com.example.hm_store.repo.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
@@ -13,8 +10,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.security.crypto.password.PasswordEncoder;
-
-import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;

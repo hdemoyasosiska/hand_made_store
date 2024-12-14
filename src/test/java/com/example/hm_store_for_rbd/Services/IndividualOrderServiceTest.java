@@ -1,16 +1,8 @@
-package com.example.hm_store_for_rbd;
+package com.example.hm_store_for_rbd.Services;
 
 import com.example.hm_store.Services.IndividualOrderService;
-import com.example.hm_store.Services.OrderService;
-import com.example.hm_store.entity.Customer;
 import com.example.hm_store.entity.IndividualOrder;
-import com.example.hm_store.entity.Item;
-import com.example.hm_store.entity.Order;
 import com.example.hm_store.repo.IndividualOrderRepository;
-import com.example.hm_store.repo.ItemRepository;
-import com.example.hm_store.repo.OrderRepository;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -18,15 +10,12 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.*;
-import static org.mockito.Mockito.never;
 
 
 @ExtendWith(MockitoExtension.class)

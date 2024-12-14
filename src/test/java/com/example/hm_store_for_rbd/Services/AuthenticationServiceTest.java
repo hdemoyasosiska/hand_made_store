@@ -1,14 +1,12 @@
-package com.example.hm_store_for_rbd;
+package com.example.hm_store_for_rbd.Services;
 
 import com.example.hm_store.Services.AuthenticationService;
 import com.example.hm_store.entity.User;
-import com.example.hm_store.repo.ItemRepository;
 import com.example.hm_store.repo.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

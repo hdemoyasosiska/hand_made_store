@@ -1,4 +1,4 @@
-package com.example.hm_store_for_rbd;
+package com.example.hm_store_for_rbd.Services;
 
 import com.example.hm_store.Services.MyUserDetails;
 import com.example.hm_store.entity.User;
