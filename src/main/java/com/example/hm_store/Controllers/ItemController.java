@@ -21,7 +21,7 @@ public class ItemController {
     private final ItemService itemService;
     
     @PostMapping
-    public @ResponseBody ResponseEntity<Item> createUser(@RequestBody Item request) {
+    public @ResponseBody ResponseEntity<Item> createItem(@RequestBody Item request) {
         itemService.saveItem(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(request);
     }
@@ -47,7 +47,7 @@ public class ItemController {
     }
 
     @DeleteMapping(value = "/{id}")
-    public @ResponseBody ResponseEntity<?> deleteUser(@PathVariable int id) {
+    public @ResponseBody ResponseEntity<?> deleteItem(@PathVariable int id) {
         Item item = itemService.deleteItemById(id);
 
         if (item == null) {

@@ -18,7 +18,7 @@ public class OrderController {
     private final OrderService orderService;
 
     @PostMapping
-    public @ResponseBody ResponseEntity<Order> createUser(@RequestBody Order request) {
+    public @ResponseBody ResponseEntity<Order> createOrder(@RequestBody Order request) {
         orderService.saveOrder(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(request);
     }
@@ -35,7 +35,7 @@ public class OrderController {
     }
 
     @GetMapping()
-    public ResponseEntity<List<Order>> findAllItems() {
+    public ResponseEntity<List<Order>> findAllOrders() {
         List<Order> orders =orderService.findAllOrders();
         if (orders.isEmpty()) {
             return ResponseEntity.noContent().build();
@@ -46,7 +46,7 @@ public class OrderController {
 
 
     @DeleteMapping(value = "/{id}")
-    public @ResponseBody ResponseEntity<?> deleteUser(@PathVariable int id) {
+    public @ResponseBody ResponseEntity<?> deleteOrder(@PathVariable int id) {
         Order order = orderService.deleteOrderById(id);
 
         if (order == null) {

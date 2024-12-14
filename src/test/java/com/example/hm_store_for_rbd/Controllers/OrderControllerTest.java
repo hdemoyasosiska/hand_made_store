@@ -44,7 +44,7 @@ public class OrderControllerTest {
 
 
     @Test
-    void findAllItems() throws Exception {
+    void findAllOrders() throws Exception {
         List<Order> orders = new ArrayList<>();
         orders.add(new Order());
         when(orderService.findAllOrders()).thenReturn(orders);
@@ -53,11 +53,17 @@ public class OrderControllerTest {
     }
 
     @Test
+    void findAllOrders_empty() throws Exception {
+        mockMvc.perform(get("/orders"))
+                .andExpect(status().isNoContent());
+    }
+
+    @Test
     void getOrderById_found() throws Exception {
         Date date = new Date();
         Order order = new Order(date);
         when(orderService.getById(1)).thenReturn(order);
-        mockMvc.perform(get("/orders/1"))
+        mockMvc.perform(get("/orders/{id}", 1))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.orderDate").value(date));
     }
@@ -69,7 +75,7 @@ public class OrderControllerTest {
     }
 
     @Test
-    void createUser() throws Exception {
+    void createOrder() throws Exception {
         Date date = new Date();
         Order order = new Order(date);
         ObjectMapper objectMapper = new ObjectMapper();
@@ -81,7 +87,7 @@ public class OrderControllerTest {
     }
 
     @Test
-    void deleteUser_found() throws Exception {
+    void deleteOrder_found() throws Exception {
         Date date = new Date();
         Order order = new Order(date);
         when(orderService.deleteOrderById(1)).thenReturn(order);
@@ -90,7 +96,7 @@ public class OrderControllerTest {
     }
 
     @Test
-    void deleteUser_not_found() throws Exception {
+    void deleteOrder_not_found() throws Exception {
         mockMvc.perform(delete("/orders/{id}", 1))
                 .andExpect(status().isNotFound());
     }
