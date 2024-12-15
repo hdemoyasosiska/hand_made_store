@@ -1,7 +1,9 @@
 package com.example.hm_store.Controllers;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -16,7 +18,12 @@ import java.io.InputStream;
 
 
 @RestController
+@RequiredArgsConstructor
 public class HTMLController {
+
+    private final ResourceLoader resourceLoader;
+
+
     @GetMapping("/home")
     public ModelAndView getHomePage() {
         ModelAndView modelAndView = new ModelAndView();
@@ -73,7 +80,8 @@ public class HTMLController {
 
     @GetMapping("/static/css/{name}")
     public byte[] getCSS(@PathVariable String name) throws IOException {
-        Resource resource = new ClassPathResource("/static/css/" + name);
+        //Resource resource = new ClassPathResource("/static/css/" + name);
+        Resource resource = resourceLoader.getResource("classpath:/static/css/" + name);
         try (InputStream inputStream = resource.getInputStream()) {
             return inputStream.readAllBytes();
         }
@@ -81,7 +89,7 @@ public class HTMLController {
 
     @GetMapping("/static/img/{name}")
     public ResponseEntity<byte[]> getImage(@PathVariable String name) throws IOException {
-        Resource resource = new ClassPathResource("/static/img/" + name);
+        Resource resource = resourceLoader.getResource("classpath:/static/img/" + name);
         try (InputStream inputStream = resource.getInputStream()) {
             byte[] imageBytes = inputStream.readAllBytes();
             HttpHeaders headers = new HttpHeaders();
@@ -92,7 +100,7 @@ public class HTMLController {
 
     @GetMapping("/static/js/{name}")
     public ResponseEntity<byte[]> getJS(@PathVariable String name) throws IOException {
-        Resource resource = new ClassPathResource("/static/js/" + name);
+        Resource resource = resourceLoader.getResource("classpath:/static/js/" + name);
         try (InputStream inputStream = resource.getInputStream()) {
             byte[] jsBytes = inputStream.readAllBytes();
             HttpHeaders headers = new HttpHeaders();
