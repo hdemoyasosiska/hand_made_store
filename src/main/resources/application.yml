@@ -1,6 +1,6 @@
 spring:
   datasource:
-    #url: jdbc:postgresql://db:5432/HandMadeStore
+    #url: ${DB_URL_FOR_DOCKER}
     url: ${DB_URL}
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
