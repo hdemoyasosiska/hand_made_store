@@ -63,7 +63,19 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 
+    testImplementation 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
+
     implementation group: 'me.paulschwarz', name: 'spring-dotenv', version: '4.0.0'
+
+    testImplementation 'org.testcontainers:junit-jupiter:1.20.4'
+
+    testImplementation 'org.testcontainers:postgresql:1.20.4'
+
+    // https://mvnrepository.com/artifact/io.rest-assured/rest-assured
+    testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '5.5.0'
+
+
 
 
 }
@@ -83,3 +95,22 @@ jar {
     from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
 }
 
+sourceSets {
+    main {
+        resources {
+            srcDirs = ['src/main/resources']
+        }
+    }
+    test {
+        resources {
+            srcDirs = ['src/test/resources']
+        }
+    }
+}
+
+task copyResources(type: Copy) {
+    from 'src/main/resources'
+    into "$buildDir/classes/java/main"
+}
+
+processResources.dependsOn(copyResources)
