@@ -10,4 +10,4 @@ Spring Framework, Spring Boot, PostgreSQL, Lombok, JUnit, Mockito, Testcontainer
 Можно искать товары, добавлять их в корзину и оформлять заказы. В каталоге можно применять фильтры и сортировки.
 Регистрация и аутентификация осуществляется с помощью Spring Security. Также после оформления заказа отправляется письмо на почту.
 
-![Иллюстрация к проекту](https://github.com/hdemoyasosiska/hand_made_store/raw/tree/main/image.png)
+![Иллюстрация к проекту](https://github.com/hdemoyasosiska/hand_made_store/raw/main/image.png)
